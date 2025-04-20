@@ -9,12 +9,10 @@ services:
     working_dir: /app
     command: >
       bash -c "
-        echo '📂 Listing /app contents...' &&
-        ls /app &&
-        echo '📄 Checking requirements.txt...' &&
-        cat /app/requirements.txt &&
-        echo '✅ Looks good!' &&
-        pip install -r /app/requirements.txt &&
-        echo '🧪 Running pytest...' &&
-        pytest -s /app/tests &&
-        tail -f /dev/null"
+      echo '📍 Inside container: current dir is $(pwd)' &&
+      echo '📂 Listing /app...' &&
+      ls -la /app &&
+      echo '📄 Showing requirements.txt...' &&
+      cat /app/requirements.txt &&
+      tail -f /dev/null"
+
