@@ -12,7 +12,8 @@ services:
         echo '📂 Listing /app contents...' &&
         ls /app &&
         echo '📄 Checking requirements.txt...' &&
-        file /app/requirements.txt &&
+        cat /app/requirements.txt &&
+        echo '✅ Looks good!' &&
         pip install -r /app/requirements.txt &&
         echo '🧪 Running pytest...' &&
         pytest -s /app/tests &&
