@@ -1,0 +1,19 @@
+services:
+  pytest-runner:
+    env_file:
+      - .env
+    image: python:3.11
+    container_name: test-runner
+    volumes:
+       - ${WORKSPACE}:/app
+    working_dir: /app
+    command: >
+      bash -c "
+        echo '📂 Listing /app contents...' &&
+        ls /app &&
+        echo '📄 Checking requirements.txt...' &&
+        file /app/requirements.txt &&
+        pip install -r /app/requirements.txt &&
+        echo '🧪 Running pytest...' &&
+        pytest -s /app/tests &&
+        tail -f /dev/null"
