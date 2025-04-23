@@ -4,7 +4,7 @@ services:
     container_name: test-runner
     volumes:
        - .:/app
-    working_dir: /app
+    working_dir: /app/workspace
     command: >
       bash -c "
       echo '📍 Inside container: current dir is $(pwd)' &&
