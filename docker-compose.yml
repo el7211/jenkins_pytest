@@ -6,10 +6,10 @@ services:
        - .:/app
     working_dir: /app/workspace
     command: >
-      bash -c "
+      bash -c '
       echo "files in current directory: " &&
       ls -la &&
       pip install -r requirements.txt &&
       echo '🚀 Running pytest...' &&
-      pytest --tb=short -v | tee /dev/stdout"
+      pytest --tb=short -v | tee /dev/stdout'
 
