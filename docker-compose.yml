@@ -1,7 +1,5 @@
 services:
   pytest-runner:
-    env_file:
-      - .env
     image: python:3.11
     container_name: test-runner
     volumes:
