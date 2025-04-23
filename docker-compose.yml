@@ -6,12 +6,11 @@ services:
        - .:/app
     working_dir: /app
     command: >
-      bash -c '
-      echo "files in /app: " &&
+      bash -c "
+      echo '📂📂 Listing /app directory...' &&
       ls -la /app &&
-      echo "files in /app/workspace: " &&
+      echo '📂📂 Listing /app/workspace directory...' &&
       ls -la /app/workspace &&
-      echo '🚀 Running pytest...' &&
-      pytest --tb=short -v | tee /dev/stdout'
+      tail -f /dev/null"
 
 #      pip install -r requirements.txt &&
