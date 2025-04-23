@@ -4,12 +4,14 @@ services:
     container_name: test-runner
     volumes:
        - .:/app
-    working_dir: /app/workspace
+    working_dir: /app
     command: >
       bash -c '
-      echo "files in current directory: " &&
+      echo "files in /app: " &&
+      ls -la /app &&
+      echo "files in /app/workspace: " &&
       ls -la /app/workspace &&
-      pip install -r requirements.txt &&
       echo '🚀 Running pytest...' &&
       pytest --tb=short -v | tee /dev/stdout'
 
+#      pip install -r requirements.txt &&
