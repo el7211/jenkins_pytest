@@ -9,7 +9,6 @@ services:
       bash -c "
       echo '📂📂 Listing /app directory...' &&
       ls -la /app &&
-      echo '📂📂 Listing /app/workspace directory...' &&
-      ls -la /app/workspace"
-
-#      pip install -r requirements.txt &&
+      pip install -r requirements.txt &&
+      echo '🚀 Running pytest...' &&
+      pytest tests --tb=short -v | tee /dev/stdout"
