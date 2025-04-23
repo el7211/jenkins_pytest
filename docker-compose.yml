@@ -7,9 +7,8 @@ services:
     working_dir: /app/workspace
     command: >
       bash -c "
-      echo '📍 Inside container: current dir is $(pwd)' &&
-      echo '📂 Listing /app...' &&
-      ls -la /app &&
-      echo '📄 Showing requirements.txt...' &&
-      cat /app/requirements.txt"
+      cd /workspace/jenkins_pytest &&
+      pip install -r requirements.txt &&
+      echo '🚀 Running pytest...' &&
+      pytest --tb=short -v"
 
