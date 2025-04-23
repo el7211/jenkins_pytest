@@ -3,7 +3,7 @@ services:
     image: python:3.11
     container_name: test-runner
     volumes:
-       - .:/app
+       - ./workspace:/app
     working_dir: /app
     command: >
       bash -c "
