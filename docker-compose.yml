@@ -11,5 +11,5 @@ services:
       ls -la &&
       pip install -r requirements.txt &&
       echo '🚀 Running pytest...' &&
-      pytest --tb=short -v"
+      pytest --tb=short -v | tee /dev/stdout"
 
