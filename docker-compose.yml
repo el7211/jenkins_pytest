@@ -7,6 +7,7 @@ services:
     working_dir: /app/workspace
     command: >
       bash -c "
+      cd jenkins_pytest &&
       pip install -r requirements.txt &&
       echo '🚀 Running pytest...' &&
       pytest --tb=short -v"
