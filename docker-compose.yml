@@ -10,7 +10,6 @@ services:
       echo '📂📂 Listing /app directory...' &&
       ls -la /app &&
       echo '📂📂 Listing /app/workspace directory...' &&
-      ls -la /app/workspace &&
-      tail -f /dev/null"
+      ls -la /app/workspace"
 
 #      pip install -r requirements.txt &&
