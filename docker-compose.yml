@@ -8,7 +8,7 @@ services:
     command: >
       bash -c '
       echo "files in current directory: " &&
-      ls -la &&
+      ls -la /app/workspace &&
       pip install -r requirements.txt &&
       echo '🚀 Running pytest...' &&
       pytest --tb=short -v | tee /dev/stdout'
